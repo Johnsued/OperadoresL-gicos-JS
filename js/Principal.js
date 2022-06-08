@@ -4,6 +4,7 @@ titulo.textContent = "Aparecida Nutricionista"
 var pacientes = document.querySelectorAll(".paciente");
 //Há várias formas de fazermos isso, e uma delas, bastante conhecida por todo mundo que já viu algo de lógica de programação é o loop for. 
 //. Ele receberá três argumentos: a declaração da variável inicial, até onde queremos que essa variável cresça, e o que queremos fazer no fim de cada iteração.
+
 for(var i= 0; i < pacientes.length; i++){
     
     var paciente = pacientes[i];
