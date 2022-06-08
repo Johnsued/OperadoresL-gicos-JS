@@ -1,32 +1,38 @@
 var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Nutricionista"
 
-var paciente = document.querySelector("#primeiro-pasciente");
+var pacientes = document.querySelectorAll(".paciente");
+//Há várias formas de fazermos isso, e uma delas, bastante conhecida por todo mundo que já viu algo de lógica de programação é o loop for. 
+//. Ele receberá três argumentos: a declaração da variável inicial, até onde queremos que essa variável cresça, e o que queremos fazer no fim de cada iteração.
+for(var i= 0; i < pacientes.length; i++){
+    
+    var paciente = pacientes[i];
 
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
+    var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
 
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
+    var tdAltura = paciente.querySelector(".info-altura");
+    var altura = tdAltura.textContent;
 
-var tdImc = paciente.querySelector(".info-imc");
+    var tdImc = paciente.querySelector(".info-imc");
 
-var pesoEhValido = true;
-var alturaEhValida = true;
+    var pesoEhValido = true;
+    var alturaEhValida = true;
 
-if(peso <= 0 || peso >= 1000){
+    if(peso <= 0 || peso >= 1000){
     console.log("Peso inválido");
     pesoEhValido = false;
     tdImc.textContent = "Peso inválido!";
-}
+    }
 
-if(altura <= 0 || altura >= 3.00){
+    if(altura <= 0 || altura >= 3.00){
     console.log("Altura inválido");
     alturaEhValida = false;
     tdImc.textContent = "altura inválida!";
-}
+    }
 
-if(alturaEhValida && pesoEhValido){
+    if(alturaEhValida && pesoEhValido){
     var imc = peso /(altura * altura);
-tdImc.textContent = imc;
-}
+    tdImc.textContent = imc.toFixed(2);
+    }
+    }   
